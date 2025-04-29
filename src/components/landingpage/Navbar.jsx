@@ -9,8 +9,8 @@ function Navbar() {
         <h2>hazır<span>cv</span></h2>
       </Link>
       <ul className="navigation-container">
-        <li><Link className="navlinks secondary__button" to="/templates">Şablonlar</Link></li>
-        <li><Link className="navlinks primary__button" to="/create">CV Oluştur</Link></li>
+        <li><Link className="button secondary__button" to="/templates">Şablonlar</Link></li>
+        <li><Link className="button primary__button" to="/create">CV Oluştur</Link></li>
       </ul>
     </header>
   )
