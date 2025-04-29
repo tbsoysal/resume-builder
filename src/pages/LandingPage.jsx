@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../components/landingpage/Navbar.jsx';
+import Hero from '../components/landingpage/Hero.jsx';
 
 function LandingPage() {
   return (
     <>
-      <h1>Welcome to Resume Builder Landing Page</h1>
+      <Navbar />
+      <Hero />
     </>
   )
 }
