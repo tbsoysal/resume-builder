@@ -9,9 +9,9 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 18px;
   backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 // Logo Container
@@ -19,7 +19,6 @@ header .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: white;
   padding: 12px 18px;
   border-radius: 18px;
 }
@@ -55,6 +54,7 @@ header .navigation-container {
 @media (max-width: 520px) {
   header {
     flex-direction: column;
+    position: static;
   }
 
   header .navlinks {
