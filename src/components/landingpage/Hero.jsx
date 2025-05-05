@@ -7,7 +7,7 @@ function Hero() {
       <div className="text-container">
         <h1>Profesyonel bir CV oluşturmak artık çok kolay!</h1>
         <p>Kullanımı kolay arayüzümüz ve özenle hazırlanmış şablonlarımız sayesinde dakikalar içinde profesyonel bir CV oluşturabilirsin. 🚀</p>
-        <Link className="button primary__button" to="/templates"><img src="../../../public/assets/arrow.svg" alt="arrow" />CV Oluşturmaya Başla! ✨</Link>
+        <Link className="button primary__button" to="/templates"><img src={`${import.meta.env.BASE_URL}assets/arrow.svg`} alt="arrow" />CV Oluşturmaya Başla! ✨</Link>
         <div className="customer__container">
           <img src={`${import.meta.env.BASE_URL}assets/customersprofilepictures.png`} />
           <p>3.1 milyon kullanıcı tarafından seviliyor!</p>
