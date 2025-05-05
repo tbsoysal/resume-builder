@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header>
       <Link to="/" className="logo-container">
-        <img src="/public/assets/hazircv-logo-transparan.svg" alt="hazir cv logo" />
+        <img src={`${import.meta.env.BASE_URL}assets/hazircv-logo-transparan.svg`} alt="hazir cv logo" />
         <h2>hazır<span>cv</span></h2>
       </Link>
       <ul className="navigation-container">
