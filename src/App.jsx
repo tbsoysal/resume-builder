@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import "./styles/global.scss";
-import LandingPage from "./pages/LandingPage";
-import CreationPage from "./pages/CreationPage.jsx";
-import TemplatesPage from "./pages/TemplatesPage.jsx";
+import "styles/global.scss";
+import LandingPage from "pages/LandingPage";
+import CreationPage from "pages/CreationPage.jsx";
+import TemplatesPage from "pages/TemplatesPage.jsx";
 
 function App() {
   return (
