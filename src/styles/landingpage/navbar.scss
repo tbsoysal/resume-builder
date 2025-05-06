@@ -4,13 +4,15 @@ header {
   margin-inline: auto;
   padding: 20px 24px;
   position: sticky;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
   z-index: 10;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
 }
 
 // Logo Container
@@ -27,8 +29,11 @@ header .logo-container:hover {
 }
 
 header .logo-container img {
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 header .logo-container h2 {
@@ -51,7 +56,8 @@ header .navigation-container {
 
 @media (max-width: 520px) {
   header {
-    padding: 10px 12px;
+    padding: 8px 12px;
+    border-radius: 0;
   }
 
   header .logo-container {
@@ -64,6 +70,6 @@ header .navigation-container {
 
   header .button {
     font-size: 12px;
-    padding: 8px;
+    padding: 10px 8px;
   }
 }
