@@ -1,4 +1,4 @@
-import "../../styles/landingpage/hero.scss";
+import "/src/styles/landingpage/hero.scss";
 import { Link } from "react-router-dom";
 
 function Hero() {
@@ -24,9 +24,6 @@ function Hero() {
           <div className="img-content">
             <img src={`${import.meta.env.BASE_URL}assets/profileletter.png`} />
           </div>
-        </a>
-        <a href="">
-
         </a>
       </div>
     </section>
