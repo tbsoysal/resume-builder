@@ -2,15 +2,14 @@
 header {
   max-width: 1800px;
   margin-inline: auto;
-  padding: 20px 24px;
+  padding: 12px 24px;
   position: sticky;
-  top: 0px;
+  top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   z-index: 10;
-  background-color: rgba($color: #fff, $alpha: 0.5);
   backdrop-filter: blur(6px);
   border-radius: 15px;
 }
@@ -29,11 +28,12 @@ header .logo-container:hover {
 }
 
 header .logo-container img {
-  width: 43px;
-  height: 43px;
-  background-color: white;
+  width: 60px;
+  height: 60px;
+  background-color: #f6f6f9;
   padding: 5px;
   border-radius: 10px;
+  border: 1px solid #e5e7eb;
 }
 
 header .logo-container h2 {
@@ -58,10 +58,16 @@ header .navigation-container {
   header {
     padding: 8px 12px;
     border-radius: 0;
+    top: 0px;
   }
 
   header .logo-container {
     gap: 4px;
+  }
+
+  header .logo-container img {
+    width: 43px;
+    height: 43px;
   }
 
   header .logo-container h2 {
