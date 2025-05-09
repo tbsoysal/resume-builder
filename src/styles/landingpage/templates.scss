@@ -34,11 +34,29 @@ section.templates {
   gap: 24px;
   padding-inline: 32px;
   transition: transform 0.5s ease-in-out;
-  margin-bottom: 200px;
 }
 
 .templates .carousel ul li {
   list-style: none;
+}
+
+.templates .pointbuttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.templates .pointbuttons span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.templates .pointbuttons span.active {
+  background-color: black;
 }
 
 .templates .carousel ul li img {

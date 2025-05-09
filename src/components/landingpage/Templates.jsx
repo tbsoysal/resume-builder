@@ -1,73 +1,107 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/landingpage/templates.scss";
 
-function Templates() {
-  const sourceRef = useRef(null);
-  const [alignAmount, setAlignAmount] = useState(0);
-  const [imageWidth, setImageWidth] = useState(0);
-  const elementRef = useRef(null);
-  const currIndexRef = useRef(1);
+const GAP_BETWEEN_IMAGES = 24;
+const SCROLL_INTERVAL = 4000;
 
-  const alignCarousel = () => {
-    // Get the amount to the left side
-    if (sourceRef.current) {
-      const rect = sourceRef.current.getBoundingClientRect();
-      // Change align amount
-      setAlignAmount(rect.left);
+function Templates() {
+  const headerRef = useRef(null);
+  const imageRef = useRef(null);
+  const currentIndex = useRef(1);
+  const lastImageRef = useRef(null);
+
+  const [carouselOffset, setCarouselOffset] = useState(0);
+  const [imageWidth, setImageWidth] = useState(0);
+
+  const updateCarouselOffset = () => {
+    if (!headerRef.current) return;
+    const rect = headerRef.current.getBoundingClientRect();
+    setCarouselOffset(rect.left);
+  };
+
+  let offset = 0;
+  const scrollCarousel = () => {
+
+    if (isLastImageVisible()) {
+      currentIndex.current = 0;
+      setCarouselOffset(0);
+      return;
     }
+
+    offset = currentIndex.current * (imageWidth + GAP_BETWEEN_IMAGES);
+    setCarouselOffset(-offset);
+
+    currentIndex.current += 1;
+  };
+
+  const isLastImageVisible = () => {
+    if (!lastImageRef.current) return false;
+
+    const carousel = document.querySelector('.carousel');
+    const lastRect = lastImageRef.current.getBoundingClientRect();
+    const carouselRect = carousel.getBoundingClientRect();
+
+    return lastRect.right <= carouselRect.right;
   }
 
-
   useEffect(() => {
-    alignCarousel();
-    window.addEventListener('resize', () => {
-      alignCarousel();
-    });
+    updateCarouselOffset();
 
-    if (elementRef.current) {
-      const rect = elementRef.current.getBoundingClientRect();
+    if (imageRef.current) {
+      const rect = imageRef.current.getBoundingClientRect();
       setImageWidth(rect.width);
     }
-    const scrollTo = () => {
-      let amount;
-      if (currIndexRef.current > 5) {
-        currIndexRef.current = 0;
-        amount = 0;
-      } else {
-        amount = currIndexRef.current * (imageWidth + 24);
-      }
-      setAlignAmount(-amount);
-      currIndexRef.current = currIndexRef.current + 1;
-    }
 
-    const interval = setInterval(() => {
-      scrollTo()
-    }, 2000);
+    const intervalId = setInterval(scrollCarousel, SCROLL_INTERVAL);
 
     return () => {
-      window.removeEventListener('resize', alignCarousel);
-      clearInterval(interval);
-    }
-  }, [setImageWidth, imageWidth]);
+      clearInterval(intervalId);
+    };
+  }, [imageWidth]);
 
   return (
     <section className="templates">
-      <div className="textcontent" ref={sourceRef}>
+      <div className="textcontent" ref={headerRef}>
         <h2>Ücretsiz CV Şablonları</h2>
-        <p>Formatla uğraşmayı bırakın — modern ve ATS-uyumlu (Başvuru Takip Sistemi) şablonlarımız sayesinde her kariyer seviyesinde öne çıkan, profesyonel bir özgeçmiş hazırlayın.</p>
+        <p>
+          Formatla uğraşmayı bırakın — modern ve ATS-uyumlu (Başvuru Takip
+          Sistemi) şablonlarımız sayesinde her kariyer seviyesinde öne çıkan,
+          profesyonel bir özgeçmiş hazırlayın.
+        </p>
       </div>
+
       <div className="carousel">
-        <ul style={{ transform: `translateX(${alignAmount}px)` }}>
-          <li><a href="#"><img ref={elementRef} src="https://prod.flowcvassets.com/resume-templates/wk78myowij2vvh1gy8l-s/960.jpeg" alt="" /></a></li>
-          <li><a href="#"><img ref={elementRef} src="https://prod.flowcvassets.com/resume-templates/gs_qryrzly3kldmqhxqsb/960.jpeg" alt="" /></a></li>
-          <li><a href="#"><img ref={elementRef} src="https://prod.flowcvassets.com/resume-templates/pgcuzlm0skbwabfnppg3b/960.jpeg" alt="" /></a></li>
-          <li><a href="#"><img ref={elementRef} src="https://prod.flowcvassets.com/resume-templates/yrf-1jligslm-ta_zmyji/960.jpeg" alt="" /></a></li>
-          <li><a href="#"><img ref={elementRef} src="https://prod.flowcvassets.com/resume-templates/cjy7ca_q8xpaocheef8v1/960.jpeg" alt="" /></a></li>
-          <li><a href="#"><img ref={elementRef} src="https://prod.flowcvassets.com/resume-templates/_xarkap79m3qjwh4w8ztg/960.jpeg" alt="" /></a></li>
+        <ul style={{ transform: `translateX(${carouselOffset}px)` }}>
+          {[
+            "wk78myowij2vvh1gy8l-s",
+            "gs_qryrzly3kldmqhxqsb",
+            "pgcuzlm0skbwabfnppg3b",
+            "yrf-1jligslm-ta_zmyji",
+            "cjy7ca_q8xpaocheef8v1",
+            "_xarkap79m3qjwh4w8ztg",
+          ].map((id, index) => (
+            <li key={index}>
+              <a href="#">
+                <img
+                  ref={index === 5 ? lastImageRef : index === 0 ? imageRef : null}
+                  src={`https://prod.flowcvassets.com/resume-templates/${id}/960.jpeg`}
+                  alt={`CV Template ${index + 1}`}
+                />
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
+
+      <div class="pointbuttons">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </section>
-  )
+  );
 }
 
-export default Templates
+export default Templates;
