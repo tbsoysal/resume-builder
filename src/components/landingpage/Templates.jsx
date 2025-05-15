@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/landingpage/templates.scss";
+import { Link } from "react-router-dom";
 
 const GAP_BETWEEN_IMAGES = 24;
 const SCROLL_INTERVAL = 4000;
@@ -92,14 +93,7 @@ function Templates() {
           ))}
         </ul>
       </div>
-
-      <div class="pointbuttons">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <Link className="button showTemplatesButton" to={'/templates'}>Tüm Şablonları Göster</Link>
     </section>
   );
 }

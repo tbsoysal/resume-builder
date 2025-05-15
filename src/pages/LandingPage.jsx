@@ -4,6 +4,7 @@ import Hero from '/src/components/landingpage/Hero.jsx';
 import Topfeatures from '/src/components/landingpage/Topfeatures.jsx';
 import Howitworks from '/src/components/landingpage/Howitworks.jsx';
 import Templates from '../components/landingpage/Templates';
+import Benefits from '../components/landingpage/Benefits';
 
 function LandingPage() {
   return (
@@ -13,6 +14,7 @@ function LandingPage() {
       <Topfeatures />
       <Howitworks />
       <Templates />
+      <Benefits />
     </>
   )
 }
