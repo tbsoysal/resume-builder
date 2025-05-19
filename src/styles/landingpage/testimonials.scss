@@ -1,6 +1,7 @@
 section.testimonials {
-  padding-left: 96px;
+  padding-inline: 40px;
   margin-top: 192px;
+  overflow-x: hidden;
 }
 
 .testimonials>div {
@@ -31,11 +32,12 @@ section.testimonials {
 }
 
 .testimonials ul {
+  margin-top: 48px;
   width: max-content;
   display: flex;
   list-style-type: none;
   align-items: stretch;
-  overflow-x: hidden;
+  transition: transform 0.3s ease;
 }
 
 .testimonials ul li {
