@@ -6,6 +6,7 @@ import Howitworks from '/src/components/landingpage/Howitworks.jsx';
 import Templates from '../components/landingpage/Templates';
 import Benefits from '../components/landingpage/Benefits';
 import Testimonials from '../components/landingpage/Testimonials';
+import Faq from '../components/landingpage/Faq.jsx';
 
 function LandingPage() {
   return (
@@ -17,6 +18,7 @@ function LandingPage() {
       <Templates />
       <Benefits />
       <Testimonials />
+      <Faq />
     </>
   )
 }
