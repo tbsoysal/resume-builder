@@ -2,6 +2,7 @@ section.faq {
   margin-top: 190px;
   max-width: 1024px;
   padding-inline: 96px;
+  padding-bottom: 160px;
 }
 
 section.faq h3 {
@@ -48,5 +49,9 @@ section.faq ul {
     margin-top: 112px;
     padding-inline: 24px;
     padding-bottom: 160px;
+  }
+
+  section.faq h3 {
+    font-size: 30px;
   }
 }

@@ -1,0 +1,52 @@
+footer {
+  background-color: #200e32;
+  color: white;
+}
+
+footer .wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 64px 96px 40px;
+}
+
+footer .flexContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .flexContainer img {
+  width: 40px;
+}
+
+footer .flexContainer span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+footer .description {
+  padding: 30px 0px;
+  line-height: 30px;
+}
+
+footer .shareText {
+  font-weight: 900;
+}
+
+footer ul {
+  margin-left: 10px;
+  display: inline-flex;
+  list-style: none;
+  gap: 10px;
+}
+
+footer .infoText {
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  footer .wrapper {
+    padding: 50px 25px 30px;
+  }
+}

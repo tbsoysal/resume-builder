@@ -76,6 +76,18 @@ section.templates {
   .templates .carousel ul li img {
     width: 45vw;
   }
+
+  .templates h2 {
+    font-size: 36px;
+  }
+
+  .templates {
+    margin-top: 100px !important;
+  }
+
+  .templates .showTemplatesButton {
+    margin-top: 50px;
+  }
 }
 
 @media (max-width: 500px) {
