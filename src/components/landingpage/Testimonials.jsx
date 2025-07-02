@@ -37,7 +37,7 @@ function Testimonials() {
                 <h4>Kerem Yılmaz</h4>
                 <p>İnsan Kaynakları & Pazarlama</p>
               </div>
-              <img src="/assets/reddit.svg" alt="reddit logo" />
+              <img src={`${import.meta.env.BASE_URL}assets/reddit.svg`} alt="reddit logo" />
             </div>
           </li>
           <li>
@@ -47,7 +47,7 @@ function Testimonials() {
                 <h4>@ZFYildiz</h4>
                 <p>Yazılım Geliştirici</p>
               </div>
-              <img src="/assets/pletter.svg" alt="profile logo" />
+              <img src={`${import.meta.env.BASE_URL}assets/pletter.svg`} alt="profile logo" />
             </div>
           </li>
           <li>
@@ -71,7 +71,7 @@ function Testimonials() {
                 <h4>Utku Çağlar Yazıcı</h4>
                 <p>Pazarlama</p>
               </div>
-              <img src="/assets/pletter.svg" alt="profile logo" />
+              <img src={`${import.meta.env.BASE_URL}assets/pletter.svg`} alt="profile logo" />
             </div>
           </li>
           <li>
