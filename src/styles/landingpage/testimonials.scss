@@ -96,6 +96,7 @@ section.testimonials {
 
 @media (max-width: 700px) {
   section.testimonials {
+    overflow-x: hidden;
     padding-inline: 20px;
     margin-top: 80px;
   }
