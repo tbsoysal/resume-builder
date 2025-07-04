@@ -16,7 +16,7 @@ function Hero() {
       </div>
       <div className="image-container">
         <img src={`${import.meta.env.BASE_URL}assets/herocvimage.webp`} alt="cv template photo" />
-        <a onClick={downloadCV} href="" className="imglink_1">
+        <a href="" className="imglink_1">
           <div className="text-content">
             <h4>Tahaberk Soysal</h4>
             <p>Front-end Geliştirici</p>

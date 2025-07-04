@@ -1,15 +1,20 @@
 import React from 'react';
 import Navbar from '/src/components/landingpage/Navbar.jsx';
 import Footer from '../components/landingpage/Footer.jsx';
+import '../styles/templatespage.scss';
 
 function TemplatesPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className='templates'>
         <h2>Hazır CV Şablonları</h2>
         <div class="grid-container">
-          <a href=""></a>
+          <a href=""><img src="../../public/assets/templateimages/cvtemplateimage01.webp" alt="cvtemplate01" /></a>
+          <a href=""><img src="../../public/assets/templateimages/cvtemplateimage02.webp" alt="cvtemplate02" /></a>
+          <a href=""><img src="../../public/assets/templateimages/cvtemplateimage03.webp" alt="cvtemplate03" /></a>
+          <a href=""><img src="../../public/assets/templateimages/cvtemplateimage04.webp" alt="cvtemplate04" /></a>
+          <a href=""><img src="../../public/assets/templateimages/cvtemplateimage05.webp" alt="cvtemplate05" /></a>
         </div>
       </main>
       <Footer />

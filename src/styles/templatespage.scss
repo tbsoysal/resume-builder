@@ -1,0 +1,27 @@
+.templates {
+  max-width: 1500px;
+  margin: 70px auto;
+  padding-inline: 20px;
+}
+
+.templates h2 {
+  font-size: 48px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.grid-container a {
+  display: block;
+}
+
+.grid-container a img {
+  width: 100%;
+}
