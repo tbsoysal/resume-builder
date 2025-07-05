@@ -1,12 +1,14 @@
 import React from 'react';
-import './CreationPage.module.scss';
+import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
+import { Link } from "react-router-dom";
+import styles from './CreationPage.module.scss';
+import buttonStyles from '@/components/common/Button.module.scss';
 
 function CreationPage() {
   return (
-    <div className="createpage">
-      <header>
-        <a href=''>&lt; Anasayfa</a>
-        <a href="">Kişisel Bilgiler</a>
+    <div className={styles.container}>
+      <header className={styles.navbar}>
+        <Link className={styles.backButton} to="/">&lt; Anasayfa</Link>
         <select>
           <option value="cvtemplate01">Şablon 01</option>
           <option value="cvtemplate02">Şablon 02</option>
@@ -14,10 +16,10 @@ function CreationPage() {
           <option value="cvtemplate04">Şablon 04</option>
           <option value="cvtemplate05">Şablon 05</option>
         </select>
-        <a href="">İndir</a>
+        <a className={`${buttonStyles.button} ${buttonStyles.primaryButton}`}>İndir</a>
       </header>
       <main>
-        <div className='edit-container'>
+        <div className={styles.editor}>
           <h3>Bilgilerinizi Giriniz</h3>
           <label for="nameinput">Ad ve Soyad</label>
           <input id='nameinput' type="text" name="name" />
@@ -30,8 +32,8 @@ function CreationPage() {
           <label for="locationinput">Konum</label>
           <input id='locationinput' type="text" name="location" />
         </div>
-        <div className="preview-container">
-
+        <div className={styles.preview}>
+          <Cvtemplate01 data={{ name: 'Tahaberk Soysal', proficiency: 'Front-end Developer', contact: 'berksysl.g@gmail.com' }} />
         </div>
       </main>
     </div>

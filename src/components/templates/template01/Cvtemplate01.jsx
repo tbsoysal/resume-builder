@@ -1,10 +1,10 @@
-import "./cvtemplate01.scss";
+import styles from "./Cvtemplate01.module.scss";
 
 function cvtemplate01({ data }) {
   return (
     <>
-      <main className="cvtemplate01">
-        <div className="left-column">
+      <main className={styles.cvtemplate01}>
+        <div className={styles.leftColumn}>
           <h1>{data.name}</h1>
           <h3>{data.proficiency}</h3>
           <img src="" alt="" />
@@ -28,7 +28,7 @@ function cvtemplate01({ data }) {
             </ul>
           </section>
         </div>
-        <div className="right-column">
+        <div className={styles.rightColumn}>
           <section>
             <h3>PROFESYONEL DENEYIM</h3>
             <ul>
