@@ -1,0 +1,26 @@
+.button {
+  display: block;
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 18px;
+  width: max-content;
+}
+
+.secondaryButton {
+  font-weight: 600;
+  border: 2px rgb(32, 14, 50) solid;
+  color: rgb(32, 14, 50);
+}
+
+.primaryButton {
+  font-weight: 900;
+  border: 2px rgb(32, 14, 50) solid;
+  color: white;
+  background-color: rgb(32, 14, 50);
+}
+
+.secondaryButton:hover,
+.primary__button:hover {
+  transition: 0.2s ease;
+  opacity: 0.70;
+}

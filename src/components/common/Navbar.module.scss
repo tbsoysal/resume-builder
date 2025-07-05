@@ -1,5 +1,5 @@
-// Header container
-header {
+// Navbar container
+.navbar {
   margin-bottom: 30px;
   max-width: 1800px;
   margin-inline: auto;
@@ -16,19 +16,19 @@ header {
 }
 
 // Logo Container
-header .logo-container {
+.navbar .logoContainer {
   display: flex;
   align-items: center;
   gap: 12px;
   border-radius: 18px;
 }
 
-header .logo-container:hover {
+.navbar .logoContainer:hover {
   transition: 0.2s ease;
   opacity: 0.7;
 }
 
-header .logo-container img {
+.navbar .logoContainer img {
   width: 60px;
   height: 60px;
   background-color: #f6f6f9;
@@ -37,18 +37,18 @@ header .logo-container img {
   border: 1px solid #e5e7eb;
 }
 
-header .logo-container h2 {
+.navbar .logoContainer h2 {
   font-size: 32px;
   font-weight: 400;
   letter-spacing: -1px;
 }
 
-header .logo-container span {
+.navbar .logoContainer span {
   font-weight: 700;
 }
 
 // Navigation Container
-header .navigation-container {
+.navbar .navigationContainer {
   display: flex;
   list-style: none;
   gap: 10px;
@@ -56,26 +56,26 @@ header .navigation-container {
 
 
 @media (max-width: 520px) {
-  header {
+  .navbar {
     padding: 8px 12px;
     border-radius: 0;
     top: 0px;
   }
 
-  header .logo-container {
+  .navbar .logoContainer {
     gap: 4px;
   }
 
-  header .logo-container img {
+  .navbar .logoContainer img {
     width: 43px;
     height: 43px;
   }
 
-  header .logo-container h2 {
+  .navbar .logoContainer h2 {
     font-size: 22px;
   }
 
-  header .button {
+  .navbar .button {
     font-size: 12px;
     padding: 10px 8px;
   }

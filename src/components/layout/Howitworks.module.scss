@@ -1,4 +1,4 @@
-section.howitworks {
+.howitworks {
   padding-inline: 24px;
 }
 
@@ -24,24 +24,24 @@ section.howitworks {
   gap: 80px;
 }
 
-.howitworks ul li .text-content {
+.howitworks .textContent {
   flex: 1;
 }
 
-.howitworks ul li h3 {
+.howitworks ul h3 {
   font-size: 42px;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-.howitworks ul li p {
+.howitworks ul p {
   font-size: 20px;
   color: #616977;
   line-height: 1.625;
   margin-top: 20px;
 }
 
-.howitworks ul li img {
+.howitworks ul img {
   max-width: 500px;
   min-width: 0;
   flex: 1;
@@ -61,11 +61,11 @@ section.howitworks {
     gap: 64px;
   }
 
-  .howitworks ul li h3 {
+  .howitworks ul h3 {
     font-size: 30px;
   }
 
-  .howitworks ul li p {
+  .howitworks ul p {
     font-size: 18px;
   }
 }
@@ -78,7 +78,7 @@ section.howitworks {
     gap: 20px;
   }
 
-  .howitworks ul li img {
+  .howitworks ul img {
     max-width: 100%;
   }
 

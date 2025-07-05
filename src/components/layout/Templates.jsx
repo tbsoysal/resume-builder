@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import "/src/styles/landingpage/templates.scss";
 import { Link } from "react-router-dom";
+import styles from './Templates.module.scss';
+import buttonStyles from '@/components/common/Button.module.scss';
 
 const GAP_BETWEEN_IMAGES = 24;
 const SCROLL_INTERVAL = 4000;
@@ -61,8 +62,8 @@ function Templates() {
   }, [imageWidth]);
 
   return (
-    <section className="templates">
-      <div className="textcontent" ref={headerRef}>
+    <section className={styles.templates}>
+      <div className={styles.textcontent} ref={headerRef}>
         <h2>Ücretsiz CV Şablonları</h2>
         <p>
           Formatla uğraşmayı bırakın — modern ve ATS-uyumlu (Başvuru Takip
@@ -71,7 +72,7 @@ function Templates() {
         </p>
       </div>
 
-      <div className="carousel">
+      <div className={styles.carousel}>
         <ul style={{ transform: `translateX(${carouselOffset}px)` }}>
           {[
             "wk78myowij2vvh1gy8l-s",
@@ -93,7 +94,7 @@ function Templates() {
           ))}
         </ul>
       </div>
-      <Link className="button showTemplatesButton" to={'/templates'}>Tüm Şablonları Göster</Link>
+      <Link className={`${buttonStyles.button} ${styles.showTemplatesButton}`} to={'/template'}>Tüm Şablonları Göster</Link>
     </section>
   );
 }

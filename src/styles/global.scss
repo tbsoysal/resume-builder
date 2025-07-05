@@ -20,30 +20,3 @@ section {
   max-width: 1650px;
   margin-inline: auto;
 }
-
-.button {
-  display: block;
-  padding: 12px 15px;
-  border-radius: 12px;
-  font-size: 18px;
-  width: max-content;
-}
-
-.secondary__button {
-  font-weight: 600;
-  border: 2px rgb(32, 14, 50) solid;
-  color: rgb(32, 14, 50);
-}
-
-.primary__button {
-  font-weight: 900;
-  border: 2px rgb(32, 14, 50) solid;
-  color: white;
-  background-color: rgb(32, 14, 50);
-}
-
-.secondary__button:hover,
-.primary__button:hover {
-  transition: 0.2s ease;
-  opacity: 0.70;
-}

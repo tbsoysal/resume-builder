@@ -1,4 +1,4 @@
-section.topfeatures {
+.topfeatures {
   max-width: 1280px;
 }
 
@@ -23,7 +23,7 @@ section.topfeatures {
 }
 
 @media (max-width: 1440px) {
-  section.topfeatures {
+  .topfeatures {
     max-width: 1150px;
   }
 
@@ -59,7 +59,7 @@ section.topfeatures {
 
   }
 
-  .topfeatures .break-element {
+  .topfeatures .breakElement {
     display: none;
   }
 }

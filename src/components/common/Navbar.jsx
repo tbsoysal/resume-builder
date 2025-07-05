@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "../../styles/landingpage/navbar.scss";
 import { Link } from "react-router-dom"
+import styles from "./Navbar.module.scss";
+import buttonStyles from "./Button.module.scss";
 
 function Navbar() {
   const [opacity, setOpacity] = useState(0);
@@ -19,14 +20,14 @@ function Navbar() {
   }, []);
 
   return (
-    <header style={{ backgroundColor: `rgba(255, 255, 255, ${opacity})` }}>
-      <Link to="/" className="logo-container">
-        <img src={`${import.meta.env.BASE_URL}assets/hazircv-logo-transparan.svg`} alt="hazir cv logo" />
+    <header className={styles.navbar} style={{ backgroundColor: `rgba(255, 255, 255, ${opacity})` }}>
+      <Link to="/" className={styles.logoContainer}>
+        <img src="/assets/hazircv-logo-transparan.svg" alt="hazir cv logo" />
         <h2>hazır<span>cv</span></h2>
       </Link>
-      <ul className="navigation-container">
-        <li><Link className="button secondary__button" to="/templates">Şablonlar</Link></li>
-        <li><Link className="button primary__button" to="/create">CV Oluştur</Link></li>
+      <ul className={styles.navigationContainer}>
+        <li><Link className={`${buttonStyles.button} ${buttonStyles.secondaryButton}`} to="/template">Şablonlar</Link></li>
+        <li><Link className={`${buttonStyles.button} ${buttonStyles.primaryButton}`} to="/create">CV Oluştur</Link></li>
       </ul>
     </header >
   )

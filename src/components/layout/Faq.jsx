@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "/src/styles/landingpage/faq.scss";
+import styles from "./Faq.module.scss";
 
 function Faq() {
   const faqData = [
@@ -11,7 +11,7 @@ function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="faq">
+    <section className={styles.faq}>
       <h3>Sıkça Sorulan Sorular</h3>
       <ul>
         {faqData.map((item, index) => (
@@ -25,11 +25,11 @@ function Faq() {
 function AccordionItem({ question, answer, isOpen, onClick }) {
   return (
     <li>
-      <a className="tab" onClick={onClick}>
-        <p className="question">{question}</p>
-        <span className="icon">{isOpen ? '-' : '+'}</span>
+      <a className={styles.tab} onClick={onClick}>
+        <p className={styles.question}>{question}</p>
+        <span className={styles.icon}>{isOpen ? '-' : '+'}</span>
       </a>
-      {isOpen && <p className="answer">{answer}</p>}
+      {isOpen && <p className={styles.answer}>{answer}</p>}
     </li>
   )
 }
