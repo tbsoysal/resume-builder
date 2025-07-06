@@ -5,7 +5,7 @@ function Footer() {
     <footer>
       <div className={styles.wrapper}>
         <div className={styles.flexContainer}>
-          <img src="/assets/hazircv-logo-transparan.svg" alt="logo" />
+          <img src={`${import.meta.env.BASE_URL}assets/hazircv-logo-transparan.svg`} alt="logo" />
           <span>HazırCV</span>
         </div>
         <p className={styles.description}>HazırCV, modern web teknolojileri kullanılarak geliştirilmiş bir projedir. React.js ile tasarlanıp kodlanan bu platform, kullanıcı dostu bir deneyim sunmayı hedeflemektedir. Tüm tasarım ve yazılım süreçleri, Web Developer olarak çalışan Tahaberk Soysal tarafından yürütülmüştür. Kullanıcıların hızlı, şık ve etkili özgeçmişler oluşturabilmeleri için özenle hazırlanmıştır.</p>
