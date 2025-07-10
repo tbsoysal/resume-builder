@@ -103,21 +103,32 @@
     margin-right: 10px;
     color: white;
   }
-}
 
+  .languagesSection {
+    border: 2px solid blue;
+    border-radius: 15px;
+    padding: 15px;
+
+  }
+
+  .documentSection {
+    margin-top: 20px;
+    border: 2px solid blue;
+    border-radius: 15px;
+    padding: 15px;
+  }
+}
 
 .mainsection .preview {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  aspect-ratio: 210 / 297;
   flex: 2;
   border-radius: 15px;
   overflow: hidden;
 }
 
 .mainsection .pdfMode {
-  width: 794px;
-  height: 1123px;
   overflow: hidden;
-  background-color: lightpink;
+  margin: 0;
+  padding: 0;
 }

@@ -39,8 +39,9 @@ function cvtemplate01({ data }) {
           <section>
             <h3 className={styles.sectionHeading}><FontAwesomeIcon icon={faAward} />BELGELER</h3>
             <ul className={styles.documentsList}>
-              <li className={styles.documentRow}><h4>Ataturk University</h4><p>Erzurum 2025</p><p>Bilgisayar Programlama Ön Lisans Diploması</p></li>
-              <li className={styles.documentRow}><h4>Amerikan Kültür Dil Okulları</h4><p>Adana 2020</p><p>İngilizce B1 Seviyesi Sertifikası</p></li>
+              {data.documents.map((doc, index) => (
+                <li key={index} className={styles.documentRow}><h4>{doc.documentOrigin}</h4><p>{doc.documentDate}</p><p>{doc.documentName}</p></li>
+              ))}
             </ul>
           </section>
         </div>
@@ -75,16 +76,13 @@ function cvtemplate01({ data }) {
           <section>
             <h3 className={styles.sectionHeading}><FontAwesomeIcon icon={faUserGraduate} />EĞİTİM</h3>
             <ul className={styles.educationContainer}>
-              <li>
-                <h4>Master of Business Administration</h4>
-                <p>Harvard Business School</p>
-                <p>2017-2018 | Boston</p>
-              </li>
-              <li>
-                <h4>Master of Business Administration</h4>
-                <p>Harvard Business School</p>
-                <p>2017-2018 | Boston</p>
-              </li>
+              {data.education.map((edu, index) => (
+                <li key={index}>
+                  <h4>{edu.educationProgram}</h4>
+                  <p>{edu.educationUniversity}</p>
+                  <p>{edu.educationDate}</p>
+                </li>
+              ))}
             </ul>
           </section>
           <section>

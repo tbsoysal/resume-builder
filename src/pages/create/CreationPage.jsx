@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { useRef } from 'react';
 import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
 import { Link } from "react-router-dom";
 import styles from './CreationPage.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
 import Form from './Form.jsx';
-import { html2pdf } from 'html2pdf.js';
+import html2pdf from 'html2pdf.js';
 
 function CreationPage() {
-  const cvRef = useRef();
   const [cvData, setCvData] = useState({
     firstName: '',
     jobTitle: '',
@@ -28,8 +26,22 @@ function CreationPage() {
   });
 
   const handleDownload = () => {
-    html2pdf(cvRef.current);
-  };
+    const cv = document.getElementById('cvcontainer');
+    html2pdf()
+      .set({
+        filename: 'cv.pdf',
+        image: { type: 'jpeg', quality: 1 }, // max quality
+        html2canvas: {
+          scale: 3,             // ⬆️ increases resolution
+          dpi: 300,             // ⬆️ makes text sharper
+          letterRendering: true, // ✅ improves text rendering
+          useCORS: true,
+        },
+        jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' },
+      })
+      .from(cv)
+      .save();
+  }
 
   return (
     <div className={styles.container}>
@@ -49,7 +61,7 @@ function CreationPage() {
           <h3>Bilgilerinizi Giriniz</h3>
           <Form cvData={cvData} setCvData={setCvData} />
         </div>
-        <div ref={cvRef} className={styles.pdfMode}>
+        <div className={styles.pdfMode} id='cvcontainer'>
           <Cvtemplate01 data={cvData} />
         </div>
       </main>
