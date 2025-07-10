@@ -61,7 +61,7 @@ function CreationPage() {
           <h3>Bilgilerinizi Giriniz</h3>
           <Form cvData={cvData} setCvData={setCvData} />
         </div>
-        <div className={styles.pdfMode} id='cvcontainer'>
+        <div className={styles.preview} id='cvcontainer'>
           <Cvtemplate01 data={cvData} />
         </div>
       </main>

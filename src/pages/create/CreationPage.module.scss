@@ -120,15 +120,9 @@
 }
 
 .mainsection .preview {
+  aspect-ratio: 1 / 1.414;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  flex: 2;
   border-radius: 15px;
   overflow: hidden;
-}
-
-.mainsection .pdfMode {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
