@@ -5,12 +5,12 @@
 
 .navbar {
   background-color: white;
-  border: 1px solid black;
   border-radius: 10px;
   display: flex;
   gap: 20px;
-  align-items: center;
-  padding: 10px;
+  align-items: stretch;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .navbar>* {
@@ -18,14 +18,106 @@
 }
 
 .navbar .backButton {
-  padding: 10px 20px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  padding-inline: 20px;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .navbar select {
   margin-left: auto;
   width: 150px;
-  border-radius: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.navbar .downloadBtn {
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 5px 20px;
+}
+
+.mainsection {
+  display: flex;
+  margin-top: 40px;
+  gap: 50px;
+  margin-inline: 50px;
+}
+
+.mainsection .editor {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  height: min-content;
+  flex: 1;
+
+  h3 {
+    font-size: 28px;
+  }
+
+  form {
+    margin-top: 30px;
+
+    label,
+    input {
+      display: block;
+    }
+
+    label {
+      font-weight: 700;
+      margin: 0 0 5px 13px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      font-size: 18px;
+      padding: 13px 15px;
+      background-color: #f3f4f6;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      margin-bottom: 15px;
+      resize: none;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    input[type='submit'],
+    select {
+      cursor: pointer;
+    }
+  }
+
+  .languageTag {
+    padding: 5px 10px;
+    background-color: #083DCC;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: white;
+  }
+}
+
+
+.mainsection .preview {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  aspect-ratio: 210 / 297;
+  flex: 2;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.mainsection .pdfMode {
+  width: 794px;
+  height: 1123px;
+  overflow: hidden;
+  background-color: lightpink;
 }

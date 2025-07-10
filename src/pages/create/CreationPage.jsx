@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRef } from 'react';
 import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
 import { Link } from "react-router-dom";
 import styles from './CreationPage.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
+import Form from './Form.jsx';
+import { html2pdf } from 'html2pdf.js';
 
 function CreationPage() {
+  const cvRef = useRef();
+  const [cvData, setCvData] = useState({
+    firstName: '',
+    jobTitle: '',
+    contact: {
+      email: '',
+      phone: '',
+      location: '',
+      linkedin: '',
+      website: ''
+    },
+    profileText: '',
+    languages: [],
+    documents: [],
+    experience: [],
+    education: [],
+    skills: []
+  });
+
+  const handleDownload = () => {
+    html2pdf(cvRef.current);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.navbar}>
@@ -16,24 +42,15 @@ function CreationPage() {
           <option value="cvtemplate04">Şablon 04</option>
           <option value="cvtemplate05">Şablon 05</option>
         </select>
-        <a className={`${buttonStyles.button} ${buttonStyles.primaryButton}`}>İndir</a>
+        <a onClick={handleDownload} className={`${buttonStyles.button} ${buttonStyles.primaryButton} ${styles.downloadBtn}`}>İndir</a>
       </header>
-      <main>
+      <main className={styles.mainsection}>
         <div className={styles.editor}>
           <h3>Bilgilerinizi Giriniz</h3>
-          <label for="nameinput">Ad ve Soyad</label>
-          <input id='nameinput' type="text" name="name" />
-          <label for="proficiency-input">Meslek</label>
-          <input id='proficiency-input' type="text" name="proficiency" />
-          <label for="emailinput">E-mail</label>
-          <input id='emailinput' type="email" name="email" />
-          <label for="phoneinput">Telefon</label>
-          <input id='phoneinput' type="number" name="number" />
-          <label for="locationinput">Konum</label>
-          <input id='locationinput' type="text" name="location" />
+          <Form cvData={cvData} setCvData={setCvData} />
         </div>
-        <div className={styles.preview}>
-          <Cvtemplate01 data={{ name: 'Tahaberk Soysal', proficiency: 'Front-end Developer', contact: 'berksysl.g@gmail.com' }} />
+        <div ref={cvRef} className={styles.pdfMode}>
+          <Cvtemplate01 data={cvData} />
         </div>
       </main>
     </div>
