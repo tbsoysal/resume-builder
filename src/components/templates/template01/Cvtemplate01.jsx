@@ -1,7 +1,6 @@
-import { faAddressCard, faAward, faBrain, faBriefcase, faEarthAmericas, faEnvelope, faLink, faLocationDot, faPhone, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard, faAward, faBrain, faBriefcase, faEarthAmericas, faEnvelope, faLocationDot, faPhone, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Cvtemplate01.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 function cvtemplate01({ data }) {
   return (
@@ -14,8 +13,6 @@ function cvtemplate01({ data }) {
             <li><FontAwesomeIcon icon={faEnvelope} />{data.contact.email}</li>
             <li><FontAwesomeIcon icon={faPhone} />{data.contact.phone}</li>
             <li><FontAwesomeIcon icon={faLocationDot} />{data.contact.location}</li>
-            <li><FontAwesomeIcon icon={faLinkedin} />{data.contact.linkedin}</li>
-            <li><FontAwesomeIcon icon={faLink} />{data.contact.website}</li>
           </ul>
           <section>
             <h3 className={styles.sectionHeading}><FontAwesomeIcon icon={faAddressCard} />PROFİL</h3>

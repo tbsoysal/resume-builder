@@ -28,7 +28,7 @@
 
 .navbar select {
   margin-left: auto;
-  width: 150px;
+  max-width: 150px;
   border-radius: 7px;
   cursor: pointer;
 }
@@ -139,6 +139,17 @@
 }
 
 @media (max-width: 530px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .navbar .backButton {
+    font-size: 13px;
+    padding-inline: 10px;
+  }
+
   .mainsection {
     margin-inline: 20px;
   }

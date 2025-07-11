@@ -110,12 +110,6 @@ function Form({ cvData, setCvData }) {
       <label htmlFor="locationinput">Konum</label>
       <input onChange={e => setCvData({ ...cvData, contact: { ...cvData.contact, location: e.target.value } })} id='locationinput' type="text" name="location" placeholder='Ülke ve şehir giriniz' />
 
-      <label htmlFor="linkedininput">Linkedin Adresi</label>
-      <input onChange={e => setCvData({ ...cvData, contact: { ...cvData.contact, linkedin: e.target.value } })} id='linkedin' type="text" name="linkedin" placeholder='https://linkedin.com/me/kullanici-adi' />
-
-      <label htmlFor="websiteinput">Websitesi</label>
-      <input onChange={e => setCvData({ ...cvData, contact: { ...cvData.contact, website: e.target.value } })} id='website' type="text" name="website" placeholder='https://orneksite.com' />
-
       <label htmlFor="profiletext">Kendinizden bahsedin</label>
       <textarea onChange={e => setCvData({ ...cvData, profileText: e.target.value })} id='profiletext' type="text" name="profiletext" placeholder='Kendinizden bahsedin...' />
 
