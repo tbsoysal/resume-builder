@@ -13,6 +13,10 @@ function Form({ cvData, setCvData }) {
   const [educationUniversity, setEducationUniversity] = useState('');
   const [educationDate, setEducationDate] = useState('');
 
+  const [skill, setSkill] = useState('');
+
+  const [experience, setExperience] = useState({ companyName: '', jobName: '', jobDate: '', jobExplanation: '' });
+
   const addLanguage = (e) => {
     e.preventDefault();
     if (!languageName.trim()) return;
@@ -60,8 +64,37 @@ function Form({ cvData, setCvData }) {
     setCvData({ ...cvData, education: cvData.education.filter((_, i) => i !== index) });
   }
 
+  const addSkill = (e) => {
+    e.preventDefault();
+    if (!skill.trim()) return;
+
+    const newSkill = { skill: skill };
+    setSkill('');
+
+    setCvData({ ...cvData, skills: [...cvData.skills, newSkill] });
+  }
+
+  const removeSkill = (index) => {
+    setCvData({ ...cvData, skills: cvData.skills.filter((_, i) => i !== index) });
+  }
+
+  const addExperience = (e) => {
+    e.preventDefault();
+    if (!experience.companyName.trim()) return;
+
+    const newExperience = experience;
+    setExperience({ companyName: '', jobName: '', jobDate: '', jobExplanation: '' });
+
+    setCvData({ ...cvData, experience: [...cvData.experience, newExperience] });
+  }
+
+  const removeExperience = (index) => {
+    setCvData({ ...cvData, experience: cvData.experience.filter((_, i) => i !== index) });
+  }
+
   return (
     <form>
+      <h3>Kişisel Bilgiler</h3>
       <label htmlFor="nameinput">Ad ve Soyad</label>
       <input onChange={e => setCvData({ ...cvData, firstName: e.target.value })} id='nameinput' type="text" name="name" placeholder='Adınızı ve soyadınızı giriniz' />
 
@@ -86,6 +119,7 @@ function Form({ cvData, setCvData }) {
       <label htmlFor="profiletext">Kendinizden bahsedin</label>
       <textarea onChange={e => setCvData({ ...cvData, profileText: e.target.value })} id='profiletext' type="text" name="profiletext" placeholder='Kendinizden bahsedin...' />
 
+      <h3>Yabancı Dil</h3>
       <div className={styles.languagesSection}>
         <label htmlFor="websiteinput">Yabancı Dil</label>
         <input onChange={e => setLanguageName(e.target.value)} value={languageName} id='language' type="text" name="language" />
@@ -104,6 +138,7 @@ function Form({ cvData, setCvData }) {
         ))}
       </div>
 
+      <h3>Belgeler</h3>
       <div className={styles.documentSection}>
         <label htmlFor="documentOrigin">Kurum Adı</label>
         <input type="text" id="documentOrigin" value={documentOrigin} onChange={e => setDocumentOrigin(e.target.value)} />
@@ -119,6 +154,7 @@ function Form({ cvData, setCvData }) {
         ))}
       </div>
 
+      <h3>Eğitim</h3>
       <div className={styles.educationSection}>
         <label htmlFor="programname">Bölüm Adı</label>
         <input type="text" id="programname" value={educationProgram} onChange={e => setEducationProgram(e.target.value)} />
@@ -130,6 +166,35 @@ function Form({ cvData, setCvData }) {
         {cvData.education.map((edu, index) => (
           <span key={index} onClick={() => removeEducation(index)} className={styles.languageTag}>
             {edu.educationUniversity} x
+          </span>
+        ))}
+      </div>
+
+      <h3>Yetenekler</h3>
+      <div className={styles.skillsSection}>
+        <input type="text" id="skillInput" value={skill} onChange={e => setSkill(e.target.value)} />
+        <input type='submit' value='Ekle' onClick={e => addSkill(e)} />
+        {cvData.skills.map((skillItem, index) => (
+          <span key={index} onClick={() => removeSkill(index)} className={styles.languageTag}>
+            {skillItem.skill} x
+          </span>
+        ))}
+      </div>
+
+      <h3>Deneyim</h3>
+      <div>
+        <label htmlFor="cName">Şirket Adı</label>
+        <input type="text" id="cName" value={experience.companyName} onChange={e => setExperience({ ...experience, companyName: e.target.value })} />
+        <label htmlFor="jName">Alan</label>
+        <input type="text" id="jName" value={experience.jobName} onChange={e => setExperience({ ...experience, jobName: e.target.value })} />
+        <label htmlFor="jDate">Tarih - Konum</label>
+        <input type="text" id="jDate" value={experience.jobDate} onChange={e => setExperience({ ...experience, jobDate: e.target.value })} />
+        <label htmlFor="jExplanation">Açıklama</label>
+        <input type="text" id="jExplanation" value={experience.jobExplanation} onChange={e => setExperience({ ...experience, jobExplanation: e.target.value })} />
+        <input type="submit" value="Ekle" onClick={e => addExperience(e)} />
+        {cvData.experience.map((experience, index) => (
+          <span key={index} onClick={() => removeExperience(index)} className={styles.languageTag}>
+            {experience.companyName} x
           </span>
         ))}
       </div>

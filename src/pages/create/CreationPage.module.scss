@@ -41,6 +41,7 @@
 
 .mainsection {
   display: flex;
+  align-items: start;
   margin-top: 40px;
   gap: 50px;
   margin-inline: 50px;
@@ -92,37 +93,53 @@
     input[type='submit'],
     select {
       cursor: pointer;
+      background-color: lightskyblue;
+      color: white;
+    }
+
+    input[type='submit']:hover {
+      background: rgba($color: lightskyblue, $alpha: 0.8);
     }
   }
 
   .languageTag {
+    display: inline-block;
     padding: 5px 10px;
     background-color: #083DCC;
     cursor: pointer;
     border-radius: 10px;
     margin-right: 10px;
     color: white;
-  }
-
-  .languagesSection {
-    border: 2px solid blue;
-    border-radius: 15px;
-    padding: 15px;
-
-  }
-
-  .documentSection {
-    margin-top: 20px;
-    border: 2px solid blue;
-    border-radius: 15px;
-    padding: 15px;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
 .mainsection .preview {
+  flex: 2;
   aspect-ratio: 1 / 1.414;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 15px;
   overflow: hidden;
+}
+
+@media (max-width: 1050px) {
+  .mainsection {
+    flex-direction: column;
+  }
+
+  .mainsection .editor,
+  .mainsection .preview {
+    flex: 1 !important;
+    width: 100%;
+  }
+}
+
+@media (max-width: 530px) {
+  .mainsection {
+    margin-inline: 20px;
+  }
 }

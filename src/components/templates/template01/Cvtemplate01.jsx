@@ -49,28 +49,14 @@ function cvtemplate01({ data }) {
           <section>
             <h3 className={styles.sectionHeading}><FontAwesomeIcon icon={faBriefcase} />DENEYİM</h3>
             <ul className={styles.experienceContainer}>
-              <li>
-                <h4 className={styles.companyName}>Appleseed Inc.</h4>
-                <p className={styles.jobName}>Business Development Consultant</p>
-                <p className={styles.jobDate}>2023 - present | NewYork</p>
-                <ul className={styles.jobExperiences}>
-                  <li>Developed and implemented strategic plans resulting in a 30% increase in new business opportunities.</li>
-                  <li>Collaborated with cross-functional teams to drive business growth and expansion.</li>
-                  <li>Estabilished and maintained relationships with key partners resulting in a 25% increase in sales revenue.</li>
-                  <li>Conducted market research and analysis to identify new market opportunities resulting in the successful launch of a new product line.</li>
-                </ul>
-              </li>
-              <li>
-                <h4 className={styles.companyName}>Aexus</h4>
-                <p className={styles.jobName}>Business Development</p>
-                <p className={styles.jobDate}>2018 - 2022 | NewYork</p>
-                <ul className={styles.jobExperiences}>
-                  <li>Developed and implemented strategic plans resulting in a 30% increase in new business opportunities.</li>
-                  <li>Collaborated with cross-functional teams to drive business growth and expansion.</li>
-                  <li>Estabilished and maintained relationships with key partners resulting in a 25% increase in sales revenue.</li>
-                  <li>Conducted market research and analysis to identify new market opportunities resulting in the successful launch of a new product line.</li>
-                </ul>
-              </li>
+              {data.experience.map((experience, index) => (
+                <li key={index}>
+                  <h4 className={styles.companyName}>{experience.companyName}</h4>
+                  <p className={styles.jobName}>{experience.jobName}</p>
+                  <p className={styles.jobDate}>{experience.jobDate}</p>
+                  <p>{experience.jobExplanation}</p>
+                </li>
+              ))}
             </ul>
           </section>
           <section>
@@ -88,10 +74,9 @@ function cvtemplate01({ data }) {
           <section>
             <h3 className={styles.sectionHeading}><FontAwesomeIcon icon={faBrain} />YETENEKLER</h3>
             <ul className={styles.skillsContainer}>
-              <li>Strategic thinking and problem-solving.</li>
-              <li>relationship building and networking.</li>
-              <li>Sales and business development strategy development and execution.</li>
-              <li>Team managment and leadership.</li>
+              {data.skills.map((skill, index) => (
+                <li key={index}>{skill.skill}</li>
+              ))}
             </ul>
           </section>
         </div>
