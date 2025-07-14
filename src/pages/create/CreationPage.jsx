@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
 import { Link } from "react-router-dom";
 import styles from './CreationPage.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
 import Form from './Form.jsx';
-import CVTemplate02 from '../../components/templates/template01/Cvtemplate02.jsx';
-import { PDFViewer } from '@react-pdf/renderer';
+import { pdf } from '@react-pdf/renderer';
+import CvTemplate01Blob from '../../components/templates/template01/CvTemplate01Blob.jsx';
 
 function CreationPage() {
   const [cvData, setCvData] = useState({
@@ -26,6 +26,18 @@ function CreationPage() {
     skills: []
   });
 
+
+  const [pdfBlobUrl, setPdfBlobUrl] = useState();
+  useEffect(() => {
+    const generatePdfBlob = async () => {
+      const blob = await pdf(<CvTemplate01Blob data={cvData} />).toBlob();
+      const url = URL.createObjectURL(blob);
+      setPdfBlobUrl(url);
+    };
+
+    generatePdfBlob();
+  }, [cvData]);
+
   return (
     <div className={styles.container}>
       <header className={styles.navbar}>
@@ -37,7 +49,7 @@ function CreationPage() {
           <option value="cvtemplate04">Şablon 04</option>
           <option value="cvtemplate05">Şablon 05</option>
         </select>
-        <a className={`${buttonStyles.button} ${buttonStyles.primaryButton} ${styles.downloadBtn}`}>İndir</a>
+        <a href={pdfBlobUrl} download='cv.pdf' className={`${buttonStyles.button} ${buttonStyles.primaryButton} ${styles.downloadBtn}`}>İndir</a>
       </header>
       <main className={styles.mainsection}>
         <div className={styles.editor}>
@@ -45,13 +57,11 @@ function CreationPage() {
           <Form cvData={cvData} setCvData={setCvData} />
         </div>
         <div className={styles.preview} id='cvcontainer'>
-          <PDFViewer key={Date.now()} style={{ width: '100%', height: '100%' }}>
-            <CVTemplate02 data={cvData} />
-          </PDFViewer>
+          <Cvtemplate01 data={cvData} />
         </div>
       </main>
     </div>
   )
 }
 
-export default CreationPage
+export default CreationPage;

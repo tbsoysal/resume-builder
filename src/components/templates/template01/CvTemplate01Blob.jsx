@@ -4,12 +4,12 @@ import ZillaSlabLight from './ZillaSlab/ZillaSlab-Light.ttf';
 import ZillaSlabMedium from './ZillaSlab/ZillaSlab-Medium.ttf';
 import ZillaSlabSemiBold from './ZillaSlab/ZillaSlab-SemiBold.ttf';
 import ZillaSlabBold from './ZillaSlab/ZillaSlab-Bold.ttf';
+import styles from './CvTemplate01BlobStyles.jsx';
 import {
   Document,
   Page,
   Text,
   View,
-  StyleSheet,
   Font,
   Svg,
   Path,
@@ -28,159 +28,6 @@ Font.register({
   format: 'truetype',
 });
 
-// Styles
-const styles = StyleSheet.create({
-  page: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'stretch',
-    backgroundColor: 'white',
-    fontFamily: 'ZillaSlab',
-    fontSize: 18,
-    fontWeight: 400,
-    height: '100%',
-    width: '100%',
-  },
-  leftColumn: {
-    display: 'block',
-    width: '45%',
-    backgroundColor: '#1b3142',
-    padding: 28,
-    color: 'white',
-  },
-  rightColumn: {
-    display: 'block',
-    flex: 1,
-    padding: 28,
-  },
-  firstName: {
-    display: 'block',
-    fontSize: 35, // 2.5em ~ 40px
-    fontWeight: 700,
-  },
-  jobTitle: {
-    display: 'block',
-    fontSize: 20, // 1.5em
-    marginBottom: 15,
-  },
-  contactListItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 5,
-  },
-  contactListText: {
-    fontSize: 14,
-    fontWeight: 300,
-    marginLeft: 5,
-  },
-  section: {
-    display: 'block',
-    marginBottom: 20,
-  },
-  sectionHeading: {
-    display: 'block',
-    fontSize: 18,
-    fontWeight: 600,
-    textAlign: 'center',
-    letterSpacing: 1,
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    borderRadius: 2,
-    marginBottom: 10,
-    paddingVertical: 3,
-    paddingHorizontal: 0,
-    textTransform: 'uppercase',
-  },
-  profileText: {
-    display: 'block',
-    fontSize: 16,
-    fontWeight: '500',
-    lineHeight: 1.4,
-  },
-  languagesContainer: {
-    display: 'block',
-  },
-  languageRow: {
-    display: 'block',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 15,
-  },
-  languageName: {
-    display: 'block',
-    fontSize: 16,
-    maxWidth: '65%'
-  },
-  levelContainer: {
-    flexDirection: 'row',
-    gap: 5,
-  },
-
-  documentsList: {
-    flexDirection: 'column',
-    marginBottom: 15
-  },
-  documentOrigin: {
-    fontWeight: 600,
-    fontSize: 16
-  },
-  documentDate: {
-    fontWeight: 500,
-    fontSize: 14
-  },
-  documentName: {
-    fontWeight: 400,
-    fontSize: 14
-  },
-
-  rightSectionHeading: {
-    display: 'block',
-    backgroundColor: '#efefef',
-    padding: 5,
-    fontWeight: '600',
-    fontSize: 18,
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    marginBottom: 10,
-  },
-
-  experienceItem: {
-    marginBottom: 10,
-  },
-  companyName: {
-    fontWeight: 500,
-    fontSize: 16
-  },
-  jobName: {
-    fontSize: 16
-  },
-  jobDate: {
-    fontSize: 14
-  },
-  jobExplanation: {
-    fontSize: 14,
-  },
-
-  educationItem: {
-    marginBottom: 10,
-  },
-  educationProgram: {
-    fontSize: 16,
-    fontWeight: 500
-  },
-  educationUniversity: {
-    fontSize: 16
-  },
-  educationDate: {
-    fontSize: 14
-  },
-
-  skillItem: {
-    fontSize: 14,
-    marginBottom: 5
-  }
-
-});
 
 // Circle SVG component (filled or empty)
 const LevelCircle = ({ filled }) => (
@@ -189,7 +36,7 @@ const LevelCircle = ({ filled }) => (
   </Svg>
 );
 
-const CVTemplate02 = ({ data }) => (
+const CvTemplate01Blob = ({ data }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.leftColumn}>
@@ -222,12 +69,18 @@ const CVTemplate02 = ({ data }) => (
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionHeading}>Profil</Text>
+          <View style={styles.sectionHeading}>
+            <Svg style={styles.sectionIcon} xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 576 512"><Path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z" /></Svg>
+            <Text>PROFİL</Text>
+          </View>
           <Text style={styles.profileText}>{data.profileText}</Text>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionHeading}>Yabancı Dil</Text>
+          <View style={styles.sectionHeading}>
+            <Svg style={styles.sectionIcon} xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 512 512"><Path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5l0 39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9l0 39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7l0-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1L257 256c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" /></Svg>
+            <Text>YABANCI DİL</Text>
+          </View>
           <View style={styles.languagesContainer}>
             {data.languages.map((language, index) => (
               <View key={index} style={styles.languageRow}>
@@ -243,7 +96,10 @@ const CVTemplate02 = ({ data }) => (
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionHeading}>Belgeler</Text>
+          <View style={styles.sectionHeading}>
+            <Svg style={styles.sectionIcon} xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 384 512"><Path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z" /></Svg>
+            <Text>BELGELER</Text>
+          </View>
           {data.documents.map((doc, index) => (
             <View key={index} style={styles.documentsList}>
               <Text style={styles.documentOrigin}>{doc.documentOrigin}</Text>
@@ -256,7 +112,10 @@ const CVTemplate02 = ({ data }) => (
 
       <View style={styles.rightColumn}>
         <View style={styles.section}>
-          <Text style={styles.rightSectionHeading}>Deneyim</Text>
+          <View style={styles.rightSectionHeading}>
+            <Svg style={styles.sectionIcon} xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 512 512"><Path d="M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z" /></Svg>
+            <Text>DENEYİM</Text>
+          </View>
           {data.experience.map((experience, index) => (
             <View key={index} style={styles.experienceItem}>
               <Text style={styles.companyName}>{experience.companyName}</Text>
@@ -268,7 +127,10 @@ const CVTemplate02 = ({ data }) => (
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.rightSectionHeading}>Eğitim</Text>
+          <View style={styles.rightSectionHeading}>
+            <Svg style={styles.sectionIcon} xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 512 512"><Path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160l0 8c0 13.3 10.7 24 24 24l400 0c13.3 0 24-10.7 24-24l0-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224l-64 0 0 196.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512l448 0c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1L448 224l-64 0 0 192-40 0 0-192-64 0 0 192-48 0 0-192-64 0 0 192-40 0 0-192zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" /></Svg>
+            <Text>EĞİTİM</Text>
+          </View>
           {data.education.map((edu, index) => (
             <View key={index} style={styles.educationItem}>
               <Text style={styles.educationProgram}>{edu.educationProgram}</Text>
@@ -279,7 +141,10 @@ const CVTemplate02 = ({ data }) => (
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.rightSectionHeading}>Yetenekler</Text>
+          <View style={styles.rightSectionHeading}>
+            <Svg style={styles.sectionIcon} xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 512 512"><Path d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z" /></Svg>
+            <Text>YETENEKLER</Text>
+          </View>
           {data.skills.map((skill, index) => (
             <Text key={index} style={styles.skillItem}>• {skill.skill}</Text>
           ))}
@@ -289,5 +154,5 @@ const CVTemplate02 = ({ data }) => (
   </Document >
 );
 
-export default CVTemplate02;
+export default CvTemplate01Blob;
 
