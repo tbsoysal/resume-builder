@@ -75,17 +75,17 @@ const styles = StyleSheet.create({
   },
   section: {
     display: 'block',
-    marginBottom: 48, // 3em (3 * 16)
+    marginBottom: 20,
   },
   sectionHeading: {
     display: 'block',
-    fontSize: 21, // 1.3em
+    fontSize: 18,
     fontWeight: 600,
     textAlign: 'center',
     letterSpacing: 1,
     backgroundColor: 'rgba(255,255,255,0.1)',
     borderRadius: 2,
-    marginBottom: 25,
+    marginBottom: 10,
     paddingVertical: 3,
     paddingHorizontal: 0,
     textTransform: 'uppercase',
@@ -121,13 +121,16 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   documentOrigin: {
-    fontWeight: 600
+    fontWeight: 600,
+    fontSize: 16
   },
   documentDate: {
-    fontWeight: 500
+    fontWeight: 500,
+    fontSize: 14
   },
   documentName: {
-    fontWeight: 400
+    fontWeight: 400,
+    fontSize: 14
   },
 
   rightSectionHeading: {
@@ -135,41 +138,48 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
     padding: 5,
     fontWeight: '600',
-    fontSize: 21,
+    fontSize: 18,
     textAlign: 'center',
     textTransform: 'uppercase',
     marginBottom: 10,
   },
-  experienceContainer: {
-    display: 'block',
-    marginBottom: 30,
-  },
+
   experienceItem: {
-    display: 'block',
-    marginBottom: 30,
-  },
-  jobName: {
-    display: 'block',
-    fontWeight: '500',
-  },
-  jobExplanation: {
-    display: 'block',
-    fontSize: 16,
-  },
-  educationContainer: {
-    display: 'block',
-    marginBottom: 30,
-  },
-  educationItem: {
-    display: 'block',
-    fontSize: 16,
-    marginBottom: 30,
-  },
-  skillsContainer: {
-    display: 'block',
-    fontSize: 16,
     marginBottom: 10,
   },
+  companyName: {
+    fontWeight: 500,
+    fontSize: 16
+  },
+  jobName: {
+    fontSize: 16
+  },
+  jobDate: {
+    fontSize: 14
+  },
+  jobExplanation: {
+    fontSize: 14,
+  },
+
+  educationItem: {
+    marginBottom: 10,
+  },
+  educationProgram: {
+    fontSize: 16,
+    fontWeight: 500
+  },
+  educationUniversity: {
+    fontSize: 16
+  },
+  educationDate: {
+    fontSize: 14
+  },
+
+  skillItem: {
+    fontSize: 14,
+    marginBottom: 5
+  }
+
 });
 
 // Circle SVG component (filled or empty)
@@ -248,11 +258,11 @@ const CVTemplate02 = ({ data }) => (
         <View style={styles.section}>
           <Text style={styles.rightSectionHeading}>Deneyim</Text>
           {data.experience.map((experience, index) => (
-            <View key={index} style={styles.listItem}>
-              <Text>{experience.companyName}</Text>
-              <Text>{experience.jobName}</Text>
-              <Text>{experience.jobDate}</Text>
-              <Text>{experience.jobExplanation}</Text>
+            <View key={index} style={styles.experienceItem}>
+              <Text style={styles.companyName}>{experience.companyName}</Text>
+              <Text style={styles.jobName}>{experience.jobName}</Text>
+              <Text style={styles.jobDate}>{experience.jobDate}</Text>
+              <Text style={styles.jobExplanation}>{experience.jobExplanation}</Text>
             </View>
           ))}
         </View>
@@ -260,10 +270,10 @@ const CVTemplate02 = ({ data }) => (
         <View style={styles.section}>
           <Text style={styles.rightSectionHeading}>Eğitim</Text>
           {data.education.map((edu, index) => (
-            <View key={index} style={styles.listItem}>
-              <Text>{edu.educationProgram}</Text>
-              <Text>{edu.educationUniversity}</Text>
-              <Text>{edu.educationDate}</Text>
+            <View key={index} style={styles.educationItem}>
+              <Text style={styles.educationProgram}>{edu.educationProgram}</Text>
+              <Text style={styles.educationUniversity}>{edu.educationUniversity}</Text>
+              <Text style={styles.educationDate}>{edu.educationDate}</Text>
             </View>
           ))}
         </View>
@@ -271,7 +281,7 @@ const CVTemplate02 = ({ data }) => (
         <View style={styles.section}>
           <Text style={styles.rightSectionHeading}>Yetenekler</Text>
           {data.skills.map((skill, index) => (
-            <Text key={index} style={styles.listItem}>{skill.skill}</Text>
+            <Text key={index} style={styles.skillItem}>• {skill.skill}</Text>
           ))}
         </View>
       </View>
