@@ -115,7 +115,6 @@ function Form({ cvData, setCvData }) {
 
       <h3>Yabancı Dil</h3>
       <div className={styles.languagesSection}>
-        <label htmlFor="websiteinput">Yabancı Dil</label>
         <input onChange={e => setLanguageName(e.target.value)} value={languageName} id='language' type="text" name="language" />
         <select onChange={e => setLanguageLevel(parseInt(e.target.value))} value={languageLevel}>
           <option value="1">Başlangıç</option>

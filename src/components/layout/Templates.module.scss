@@ -24,9 +24,8 @@ section.templates {
 
 .templates .carousel {
   margin-top: 56px;
-
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .templates .carousel ul {
@@ -34,6 +33,13 @@ section.templates {
   gap: 24px;
   padding-inline: 32px;
   transition: transform 0.5s ease-in-out;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.templates .carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .templates .showTemplatesButton {

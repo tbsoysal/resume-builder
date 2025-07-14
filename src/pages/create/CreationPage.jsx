@@ -53,7 +53,6 @@ function CreationPage() {
       </header>
       <main className={styles.mainsection}>
         <div className={styles.editor}>
-          <h3>Bilgilerinizi Giriniz</h3>
           <Form cvData={cvData} setCvData={setCvData} />
         </div>
         <div className={styles.preview} id='cvcontainer'>

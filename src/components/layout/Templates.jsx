@@ -1,69 +1,12 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from './Templates.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
 
-const GAP_BETWEEN_IMAGES = 24;
-const SCROLL_INTERVAL = 4000;
-
 function Templates() {
-  const headerRef = useRef(null);
-  const imageRef = useRef(null);
-  const currentIndex = useRef(1);
-  const lastImageRef = useRef(null);
-
-  const [carouselOffset, setCarouselOffset] = useState(0);
-  const [imageWidth, setImageWidth] = useState(0);
-
-  const updateCarouselOffset = () => {
-    if (!headerRef.current) return;
-    const rect = headerRef.current.getBoundingClientRect();
-    setCarouselOffset(rect.left);
-  };
-
-  let offset = 0;
-  const scrollCarousel = () => {
-
-    if (isLastImageVisible()) {
-      currentIndex.current = 0;
-      setCarouselOffset(0);
-      return;
-    }
-
-    offset = currentIndex.current * (imageWidth + GAP_BETWEEN_IMAGES);
-    setCarouselOffset(-offset);
-
-    currentIndex.current += 1;
-  };
-
-  const isLastImageVisible = () => {
-    if (!lastImageRef.current) return false;
-
-    const carousel = document.querySelector('.carousel');
-    const lastRect = lastImageRef.current.getBoundingClientRect();
-    const carouselRect = carousel.getBoundingClientRect();
-
-    return lastRect.right <= carouselRect.right;
-  }
-
-  useEffect(() => {
-    updateCarouselOffset();
-
-    if (imageRef.current) {
-      const rect = imageRef.current.getBoundingClientRect();
-      setImageWidth(rect.width);
-    }
-
-    const intervalId = setInterval(scrollCarousel, SCROLL_INTERVAL);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [imageWidth]);
 
   return (
     <section className={styles.templates}>
-      <div className={styles.textcontent} ref={headerRef}>
+      <div className={styles.textcontent} >
         <h2>Ücretsiz CV Şablonları</h2>
         <p>
           Formatla uğraşmayı bırakın — modern ve ATS-uyumlu (Başvuru Takip
@@ -73,7 +16,7 @@ function Templates() {
       </div>
 
       <div className={styles.carousel}>
-        <ul style={{ transform: `translateX(${carouselOffset}px)` }}>
+        <ul>
           {[
             "wk78myowij2vvh1gy8l-s",
             "gs_qryrzly3kldmqhxqsb",
@@ -85,7 +28,6 @@ function Templates() {
             <li key={index}>
               <a href="#">
                 <img
-                  ref={index === 5 ? lastImageRef : index === 0 ? imageRef : null}
                   src={`https://prod.flowcvassets.com/resume-templates/${id}/960.jpeg`}
                   alt={`CV Template ${index + 1}`}
                 />
