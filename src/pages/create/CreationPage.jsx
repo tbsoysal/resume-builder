@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
+import { pdf } from '@react-pdf/renderer';
 import { Link } from "react-router-dom";
+import CvTemplate01Blob from '../../components/templates/template01/CvTemplate01Blob.jsx';
+import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
+import Form from './Form.jsx';
 import styles from './CreationPage.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
-import Form from './Form.jsx';
-import { pdf } from '@react-pdf/renderer';
-import CvTemplate01Blob from '../../components/templates/template01/CvTemplate01Blob.jsx';
 
 function CreationPage() {
   const [cvData, setCvData] = useState({
@@ -26,8 +26,8 @@ function CreationPage() {
     skills: []
   });
 
-
   const [pdfBlobUrl, setPdfBlobUrl] = useState();
+
   useEffect(() => {
     const generatePdfBlob = async () => {
       const blob = await pdf(<CvTemplate01Blob data={cvData} />).toBlob();
@@ -51,6 +51,7 @@ function CreationPage() {
         </select>
         <a href={pdfBlobUrl} download='cv.pdf' className={`${buttonStyles.button} ${buttonStyles.primaryButton} ${styles.downloadBtn}`}>İndir</a>
       </header>
+
       <main className={styles.mainsection}>
         <div className={styles.editor}>
           <Form cvData={cvData} setCvData={setCvData} />

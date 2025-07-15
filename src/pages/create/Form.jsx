@@ -2,8 +2,7 @@ import { useState } from "react"
 import styles from './CreationPage.module.scss';
 
 function Form({ cvData, setCvData }) {
-  const [languageName, setLanguageName] = useState('');
-  const [languageLevel, setLanguageLevel] = useState(1);
+  const [languageInput, setLanguageInput] = useState({ name: '', level: 1 });
 
   const [documentOrigin, setDocumentOrigin] = useState('');
   const [documentName, setDocumentName] = useState('');
@@ -17,20 +16,15 @@ function Form({ cvData, setCvData }) {
 
   const [experience, setExperience] = useState({ companyName: '', jobName: '', jobDate: '', jobExplanation: '' });
 
-  const addLanguage = (e) => {
-    e.preventDefault();
-    if (!languageName.trim()) return;
+  const addItem = (categoryName, newItemObject, resetFunction) => {
+    if (!newItemObject || !Object.values(newItemObject)[0].trim?.()) return;
+    setCvData({ ...cvData, [categoryName]: [...cvData[categoryName], newItemObject] })
+    resetFunction();
+  }
 
-    const newLang = { name: languageName, level: languageLevel };
-    setLanguageName('');
-    setLanguageLevel(1);
-
-    setCvData({ ...cvData, languages: [...cvData.languages, newLang] });
-  };
-
-  const removeLanguage = (index) => {
-    setCvData({ ...cvData, languages: cvData.languages.filter((_, i) => i !== index) })
-  };
+  const removeItem = (categoryName, index) => {
+    setCvData({ ...cvData, [categoryName]: cvData[categoryName].filter((_, i) => i !== index) })
+  }
 
   const addDocument = (e) => {
     e.preventDefault();
@@ -115,17 +109,17 @@ function Form({ cvData, setCvData }) {
 
       <h3>Yabancı Dil</h3>
       <div className={styles.languagesSection}>
-        <input onChange={e => setLanguageName(e.target.value)} value={languageName} id='language' type="text" name="language" />
-        <select onChange={e => setLanguageLevel(parseInt(e.target.value))} value={languageLevel}>
+        <input onChange={e => setLanguageInput({ name: e.target.value, level: languageInput.level })} value={languageInput.name} id='language' type="text" name="language" />
+        <select onChange={e => setLanguageInput({ name: languageInput.name, level: parseInt(e.target.value) })} value={languageInput.level}>
           <option value="1">Başlangıç</option>
           <option value="2">Temel</option>
           <option value="3">Orta</option>
           <option value="4">Profesyonel</option>
           <option value="5">Ana dil</option>
         </select>
-        <input onClick={addLanguage} type="submit" value='Ekle' />
+        <input onClick={() => addItem('languages', languageInput, () => { setLanguageInput({ name: '', level: 1 }) })} type="submit" value='Ekle' />
         {cvData.languages.map((language, index) => (
-          <span key={index} onClick={() => removeLanguage(index)} className={styles.languageTag}>
+          <span key={index} onClick={() => removeItem('languages', index)} className={styles.languageTag}>
             {language.name} x
           </span>
         ))}
