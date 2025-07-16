@@ -1,0 +1,10 @@
+export { PhoneIcon } from './PhoneIcon.jsx';
+export { EmailIcon } from './EmailIcon.jsx';
+export { LocationIcon } from './LocationIcon.jsx';
+export { ProfileIcon } from './ProfileIcon.jsx';
+export { LanguageIcon } from './LanguageIcon.jsx';
+export { DocumentIcon } from './DocumentIcon.jsx';
+export { WorkIcon } from './WorkIcon.jsx';
+export { EducationIcon } from './EducationIcon.jsx';
+export { SkillsIcon } from './SkillsIcon.jsx';
+export { LanguageLevelIcon } from './LanguageLevelIcon.jsx';

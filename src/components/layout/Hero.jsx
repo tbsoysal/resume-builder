@@ -6,6 +6,7 @@ function Hero() {
 
   return (
     <section className={styles.hero} id="herosection">
+      {/* Hero Text */}
       <div className={styles.textContainer}>
         <h1>Profesyonel bir CV oluşturmak artık çok kolay!</h1>
         <p>Kullanımı kolay arayüzümüz ve özenle hazırlanmış şablonlarımız sayesinde dakikalar içinde profesyonel bir CV oluşturabilirsin. 🚀</p>
@@ -15,9 +16,10 @@ function Hero() {
           <p>3.1 milyon kullanıcı tarafından seviliyor!</p>
         </div>
       </div>
+      {/* Hero Image*/}
       <div className={styles.imageContainer}>
         <img src={`${import.meta.env.BASE_URL}assets/herocvimage.webp`} alt="cv template photo" />
-        <a href="" className={styles.imglink1}>
+        <a className={styles.imglink1}>
           <div className={styles.textContent}>
             <h4>Tahaberk Soysal</h4>
             <p>Front-end Geliştirici</p>
@@ -28,7 +30,7 @@ function Hero() {
           </div>
         </a>
       </div>
-    </section>
+    </section >
   )
 }
 

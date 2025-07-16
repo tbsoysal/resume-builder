@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from './Templates.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
+import { TemplatesCarousel } from "./TemplatesCarousel";
 
 function Templates() {
 
@@ -14,28 +15,7 @@ function Templates() {
           profesyonel bir özgeçmiş hazırlayın.
         </p>
       </div>
-
-      <div className={styles.carousel}>
-        <ul>
-          {[
-            "wk78myowij2vvh1gy8l-s",
-            "gs_qryrzly3kldmqhxqsb",
-            "pgcuzlm0skbwabfnppg3b",
-            "yrf-1jligslm-ta_zmyji",
-            "cjy7ca_q8xpaocheef8v1",
-            "_xarkap79m3qjwh4w8ztg",
-          ].map((id, index) => (
-            <li key={index}>
-              <a href="#">
-                <img
-                  src={`https://prod.flowcvassets.com/resume-templates/${id}/960.jpeg`}
-                  alt={`CV Template ${index + 1}`}
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <TemplatesCarousel />
       <Link className={`${buttonStyles.button} ${styles.showTemplatesButton}`} to={'/template'}>Tüm Şablonları Göster</Link>
     </section>
   );

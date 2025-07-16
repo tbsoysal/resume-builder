@@ -22,26 +22,6 @@ section.templates {
   color: #616977;
 }
 
-.templates .carousel {
-  margin-top: 56px;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.templates .carousel ul {
-  display: flex;
-  gap: 24px;
-  padding-inline: 32px;
-  transition: transform 0.5s ease-in-out;
-  overflow-x: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.templates .carousel::-webkit-scrollbar {
-  display: none;
-}
-
 .templates .showTemplatesButton {
   display: block;
   max-width: 300px;
@@ -57,28 +37,45 @@ section.templates {
   margin-top: 50px;
 }
 
-.templates .carousel ul li img {
-  width: 17.6vw;
-  border-radius: 10px;
+.embla {
+  overflow: hidden;
+  margin-top: 40px;
+  max-width: 1650px;
+  padding-inline: 32px;
+  margin-inline: auto;
 }
 
-@media (max-width: 1440px) {
-  .templates .carousel ul li img {
-    width: 25vw;
-  }
+.embla__container {
+  display: flex;
+  width: 100%;
+}
+
+.embla__slide {
+  flex: 0 0 318px;
+  min-width: 0;
+  margin-right: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.embla__slide:hover {
+  opacity: 0.7;
+}
+
+.embla__slide img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1.414;
+  border-radius: 8px;
 }
 
 @media (max-width: 1024px) {
-  .templates .carousel ul li img {
-    width: 35vw;
+  .embla {
+    margin-top: 25px;
   }
 }
 
 @media (max-width: 768px) {
-  .templates .carousel ul li img {
-    width: 45vw;
-  }
-
   .templates h2 {
     font-size: 36px;
   }
@@ -88,12 +85,8 @@ section.templates {
   }
 
   .templates .showTemplatesButton {
+    font-size: 14px;
+    padding: 15px 20px;
     margin-top: 50px;
-  }
-}
-
-@media (max-width: 500px) {
-  .templates .carousel ul li img {
-    width: 75vw;
   }
 }

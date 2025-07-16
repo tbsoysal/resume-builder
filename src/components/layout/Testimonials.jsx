@@ -1,34 +1,15 @@
-import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
 import styles from './Testimonials.module.scss';
 
 function Testimonials() {
-  const carouselRef = useRef(null);
-  const liRef = useRef(null);
-  const [translateX, setTranslateX] = useState(0);
-  const [maxScroll, setMaxScroll] = useState(0);
-  useEffect(() => {
-    const ul = carouselRef.current;
-    if (ul) {
-      const containerWidth = ul.parentElement.offsetWidth;
-      const contentWidth = ul.scrollWidth;
-      const maxScroll = contentWidth - containerWidth;
-      setMaxScroll(-maxScroll - 32);
-    }
-  }, []);
+
   return (
     <section className={styles.testimonials}>
       <div>
         <h3>Binlerce Kişi Bizi Tercih Etti</h3>
-        <div className={styles.controlls}>
-          <a onClick={() => setTranslateX(translateX + liRef.current.offsetWidth - 32)} className={`${translateX >= 0 ? styles.passive : ""}`} ><svg className={`${translateX >= 0 ? styles.passive : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" aria-label="Arrow Left"><path fill="currentColor" fillRule="evenodd" d="M8.145 32.552L31.772 9.925l3.771 3.771-16.19 16.19h33.942v5.333H19.353l16.19 16.19-3.771 3.77L9.145 32.553z" clipRule="evenodd"></path></svg></a>
-          <a onClick={() => setTranslateX(translateX - liRef.current.offsetWidth - 32)} className={`${translateX <= maxScroll ? styles.passive : ""}`}><svg className={`${translateX <= maxScroll ? styles.passive : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" ><path fill="currentColor" fillRule="evenodd" d="M54.853 31.449L32.227 54.076l-3.771-3.771 16.19-16.19H10.702v-5.333h33.942l-16.19-16.19 3.771-3.77 22.627 22.627z" clipRule="evenodd"></path></svg></a >
-        </div >
       </div >
       <div className={styles.carouselContainer}>
-        <ul ref={carouselRef} style={{ transform: `translateX(${translateX > 0 ? setTranslateX(0) : Math.max(translateX, maxScroll)}px)` }}>
-          <li ref={liRef}>
+        <ul>
+          <li>
             <p>HazırCV kariyerimi değiştirdi. Sıkışıp kaldığım, ilerleme imkanı olmayan bir fast food işindeydim ve kendi hazırladığım özgeçmişi kullanıyordum. HazırCV’yi Reddit’te keşfettim. Diğer “ücretsiz” araçlar gibi özgeçmişinizi elinizde tutmak yerine, HazırCV gerçekten işe yarayan bir hizmet sundu. HazırCV sayesinde FedEx Ground ve The Source’ta iş buldum.</p>
             <div>
               <div>

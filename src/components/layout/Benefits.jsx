@@ -5,6 +5,7 @@ function Benefits() {
     <section className={styles.benefits}>
       <h3>İhtiyacınız olan her şey, basit hale getirildi</h3>
       <p>Gizli ücret yok, filigran yok, sürpriz yok. Verileriniz güvende kalır, ilk özgeçmişiniz sonsuza kadar ücretsizdir ve istediğiniz zaman oluşturabilir, düzenleyebilir ve indirebilirsiniz.</p>
+
       <ul>
         <li>
           <div className={styles.imageContainer}>
@@ -49,6 +50,7 @@ function Benefits() {
           <p>Birçok işveren, özgeçmişlerde anahtar kelimeleri tarayan sistemler kullanır. FlowCV ile oluşturduğunuz PDF, bu sistemler tarafından kolayca okunabilir.</p>
         </li>
       </ul>
+
     </section>
   )
 }
