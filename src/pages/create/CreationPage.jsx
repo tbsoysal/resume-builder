@@ -11,6 +11,7 @@ function CreationPage() {
   const [cvData, setCvData] = useState({
     firstName: '',
     jobTitle: '',
+    profileText: '',
     contact: {
       email: '',
       phone: '',
@@ -18,7 +19,6 @@ function CreationPage() {
       linkedin: '',
       website: ''
     },
-    profileText: '',
     languages: [],
     documents: [],
     experience: [],

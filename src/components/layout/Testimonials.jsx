@@ -8,8 +8,6 @@ function Testimonials() {
   const liRef = useRef(null);
   const [translateX, setTranslateX] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
-  console.log('translateX: ' + translateX)
-  console.log('maxScroll: ' + maxScroll)
   useEffect(() => {
     const ul = carouselRef.current;
     if (ul) {

@@ -62,8 +62,8 @@ function cvtemplate01({ data }) {
               BELGELER
             </h3>
             <ul className={styles.documentsList}>
-              {data.documents.map((doc, index) => (
-                <li key={index} className={styles.documentRow}><h4>{doc.documentOrigin}</h4><p>{doc.documentDate}</p><p>{doc.documentName}</p></li>
+              {data.documents.map((document, index) => (
+                <li key={index} className={styles.documentRow}><h4>{document.origin}</h4><p>{document.date}</p><p>{document.name}</p></li>
               ))}
             </ul>
           </section>
@@ -91,11 +91,11 @@ function cvtemplate01({ data }) {
               EĞİTİM
             </h3>
             <ul className={styles.educationContainer}>
-              {data.education.map((edu, index) => (
+              {data.education.map((education, index) => (
                 <li key={index}>
-                  <h4>{edu.educationProgram}</h4>
-                  <p>{edu.educationUniversity}</p>
-                  <p>{edu.educationDate}</p>
+                  <h4>{education.program}</h4>
+                  <p>{education.university}</p>
+                  <p>{education.date}</p>
                 </li>
               ))}
             </ul>
@@ -107,7 +107,7 @@ function cvtemplate01({ data }) {
             </h3>
             <ul className={styles.skillsContainer}>
               {data.skills.map((skill, index) => (
-                <li key={index}>{skill.skill}</li>
+                <li key={index}>{skill}</li>
               ))}
             </ul>
           </section>

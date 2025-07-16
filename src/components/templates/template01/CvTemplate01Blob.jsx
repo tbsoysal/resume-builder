@@ -102,9 +102,9 @@ const CvTemplate01Blob = ({ data }) => (
           </View>
           {data.documents.map((doc, index) => (
             <View key={index} style={styles.documentsList}>
-              <Text style={styles.documentOrigin}>{doc.documentOrigin}</Text>
-              <Text style={styles.documentDate}>{doc.documentDate}</Text>
-              <Text style={styles.documentName}>{doc.documentName}</Text>
+              <Text style={styles.documentOrigin}>{doc.origin}</Text>
+              <Text style={styles.documentDate}>{doc.date}</Text>
+              <Text style={styles.documentName}>{doc.name}</Text>
             </View>
           ))}
         </View>
@@ -133,9 +133,9 @@ const CvTemplate01Blob = ({ data }) => (
           </View>
           {data.education.map((edu, index) => (
             <View key={index} style={styles.educationItem}>
-              <Text style={styles.educationProgram}>{edu.educationProgram}</Text>
-              <Text style={styles.educationUniversity}>{edu.educationUniversity}</Text>
-              <Text style={styles.educationDate}>{edu.educationDate}</Text>
+              <Text style={styles.educationProgram}>{edu.program}</Text>
+              <Text style={styles.educationUniversity}>{edu.university}</Text>
+              <Text style={styles.educationDate}>{edu.date}</Text>
             </View>
           ))}
         </View>
@@ -146,7 +146,7 @@ const CvTemplate01Blob = ({ data }) => (
             <Text>YETENEKLER</Text>
           </View>
           {data.skills.map((skill, index) => (
-            <Text key={index} style={styles.skillItem}>• {skill.skill}</Text>
+            <Text key={index} style={styles.skillItem}>• {skill}</Text>
           ))}
         </View>
       </View>

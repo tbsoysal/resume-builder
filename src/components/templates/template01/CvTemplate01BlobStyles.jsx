@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     backgroundColor: 'white',
     fontFamily: 'ZillaSlab',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 400,
     height: '100%',
     width: '100%',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 5,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 600,
     textAlign: 'center',
     letterSpacing: 1,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
   profileText: {
     display: 'block',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '500',
     lineHeight: 1.4,
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   languageName: {
     display: 'block',
-    fontSize: 16,
+    fontSize: 15,
     maxWidth: '65%'
   },
   levelContainer: {
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   documentOrigin: {
     fontWeight: 600,
-    fontSize: 16
+    fontSize: 15
   },
   documentDate: {
     fontWeight: 500,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
     padding: 5,
     fontWeight: '600',
-    fontSize: 18,
+    fontSize: 16,
     textAlign: 'center',
     textTransform: 'uppercase',
     marginBottom: 10,
@@ -126,10 +126,10 @@ const styles = StyleSheet.create({
   },
   companyName: {
     fontWeight: 500,
-    fontSize: 16
+    fontSize: 15
   },
   jobName: {
-    fontSize: 16
+    fontSize: 15
   },
   jobDate: {
     fontSize: 14
@@ -142,11 +142,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   educationProgram: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 500
   },
   educationUniversity: {
-    fontSize: 16
+    fontSize: 15
   },
   educationDate: {
     fontSize: 14
