@@ -3,7 +3,21 @@
   margin-inline: auto;
 }
 
+.navbarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding-inline: 24px;
+}
+
 .navbar {
+  max-width: 1600px;
+  width: 100%;
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -40,26 +54,38 @@
 }
 
 .mainsection {
+  max-width: 1600px;
   display: flex;
-  align-items: start;
+  justify-content: center;
   gap: 50px;
-  margin: 40px 50px 40px;
+  margin-inline: 24px;
 }
 
 .mainsection .editor {
-  background-color: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  height: min-content;
+  padding-top: 104px;
+  padding-bottom: 32px;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
   flex: 1;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  will-change: transform;
 
-  h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   form {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
 
     label,
     input {
@@ -118,12 +144,17 @@
 }
 
 .mainsection .preview {
-  flex: 2;
-  aspect-ratio: 1 / 1.414;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  border-radius: 15px;
-  overflow: hidden;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
+  padding-top: 104px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  will-change: transform;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -135,6 +166,17 @@
   .mainsection .preview {
     flex: 1 !important;
     width: 100%;
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 0;
+  }
+
+  .mainsection .editor {
+    padding-top: 80px;
+  }
+
+  .mainsection .preview {
+    padding-top: 0;
   }
 }
 
@@ -148,9 +190,5 @@
   .navbar .backButton {
     font-size: 13px;
     padding-inline: 10px;
-  }
-
-  .mainsection {
-    margin-inline: 20px;
   }
 }
