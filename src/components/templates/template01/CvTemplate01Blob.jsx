@@ -30,20 +30,29 @@ const CvTemplate01Blob = ({ data }) => (
         {/* Contact Section */}
         <View style={styles.section}>
           {/* Email */}
-          <View style={styles.contactListItem}>
-            <EmailIcon />
-            <Text style={styles.contactListText}>{data.contact.email}</Text>
-          </View>
+          {
+            data.contact.email && (
+              <View style={styles.contactListItem}>
+                <EmailIcon />
+                <Text style={styles.contactListText}>{data.contact.email}</Text>
+              </View>)
+          }
           {/* Phone */}
-          <View style={styles.contactListItem}>
-            <PhoneIcon />
-            <Text style={styles.contactListText}> {data.contact.phone}</Text>
-          </View>
+          {
+            data.contact.phone && (
+              <View style={styles.contactListItem}>
+                <PhoneIcon />
+                <Text style={styles.contactListText}> {data.contact.phone}</Text>
+              </View>)
+          }
           {/* Location */}
-          <View style={styles.contactListItem}>
-            <LocationIcon />
-            <Text style={styles.contactListText}> {data.contact.location}</Text>
-          </View>
+          {
+            data.contact.location && (
+              <View style={styles.contactListItem}>
+                <LocationIcon />
+                <Text style={styles.contactListText}> {data.contact.location}</Text>
+              </View>)
+          }
         </View>
 
         {/* Profile Text Section */}
