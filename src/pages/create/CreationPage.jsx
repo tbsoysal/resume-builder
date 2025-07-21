@@ -6,6 +6,7 @@ import Cvtemplate01 from '@/components/templates/template01/Cvtemplate01';
 import Form from './Form.jsx';
 import styles from './CreationPage.module.scss';
 import buttonStyles from '@/components/common/Button.module.scss';
+import { useRef } from 'react';
 
 function CreationPage() {
   const [cvData, setCvData] = useState({
@@ -27,6 +28,7 @@ function CreationPage() {
   });
 
   const [pdfBlobUrl, setPdfBlobUrl] = useState();
+  const wrapperRef = useRef();
 
   useEffect(() => {
     const generatePdfBlob = async () => {
@@ -35,6 +37,22 @@ function CreationPage() {
       setPdfBlobUrl(url);
     };
 
+    const scale = () => {
+      const wrapper = wrapperRef.current;
+      const cv = wrapper.firstElementChild;
+
+      if (!wrapper || !cv) return;
+
+      const scale = wrapper.clientWidth / cv.offsetWidth;
+
+      cv.style.transform = `scale(${scale})`;
+      wrapper.style.height = (cv.offsetHeight * scale) + 'px';
+    }
+
+    window.addEventListener('resize', scale);
+    window.addEventListener('load', scale);
+
+    scale();
     generatePdfBlob();
   }, [cvData]);
 
@@ -58,8 +76,10 @@ function CreationPage() {
         <div className={styles.editor}>
           <Form cvData={cvData} setCvData={setCvData} />
         </div>
-        <div className={styles.preview} id='cvcontainer'>
-          <Cvtemplate01 data={cvData} />
+        <div className={styles.preview}>
+          <div ref={wrapperRef}>
+            <Cvtemplate01 data={cvData} />
+          </div>
         </div>
       </main>
     </div>
