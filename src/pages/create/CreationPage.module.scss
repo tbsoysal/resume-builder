@@ -50,7 +50,11 @@
 .navbar .downloadBtn {
   cursor: pointer;
   border-radius: 7px;
-  padding: 5px 20px;
+  padding: 5px 25px;
+
+  i {
+    margin-left: 10px;
+  }
 }
 
 .mainsection {
@@ -127,6 +131,15 @@
       transition: 0.2s ease;
       opacity: 0.70;
     }
+
+    .profileSection,
+    .languagesSection,
+    .documentsSection,
+    .experiencesSection,
+    .educationSection,
+    .skillsSection {
+      display: none;
+    }
   }
 
   .languageTag {
@@ -159,20 +172,55 @@
   }
 }
 
+.sectionButtons {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1b3142;
+    color: white;
+    font-family: inherit;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 530px) {
   .navbar {
     position: sticky;
     top: 0;
     left: 0;
+    gap: 10px;
   }
 
   .navbar .backButton {
     font-size: 13px;
     padding-inline: 10px;
   }
+
+  .navbar .downloadBtn {
+    padding: 10px 20px;
+  }
+
+  .sectionButtons {
+    flex-direction: column;
+
+    button {
+      padding: 10px 0px !important;
+    }
+  }
 }
 
 @media (max-width: 950px) {
+  .navbarContainer {
+    padding-inline: 0;
+  }
+
   .mainsection {
     flex-direction: column;
     gap: 0;
@@ -188,5 +236,12 @@
   .mainsection .editor {
     overflow-y: hidden;
     min-width: 0;
+    min-height: 0;
+  }
+
+  .sectionButtons {
+    button {
+      padding: 5px 10px;
+    }
   }
 }
