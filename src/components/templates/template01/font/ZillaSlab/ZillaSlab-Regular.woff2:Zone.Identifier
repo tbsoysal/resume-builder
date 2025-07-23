@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/8d389663-8b79-454e-9686-666c22fb5d9d/ZillaSlab-Regular.woff2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250723%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20250723T183346Z&X-Amz-Expires=86400&X-Amz-Signature=cf906bc0657b3886a529f1315f1c5b45c01f2d8645f9421ef5c273d800debb36&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22ZillaSlab-Regular.woff2%22&response-content-type=font%2Fwoff2&x-id=GetObject

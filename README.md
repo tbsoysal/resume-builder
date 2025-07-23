@@ -1,12 +1,41 @@
-# React + Vite
+# 📝 Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and modern resume (CV) creation tool built with React.  
+Create, preview, and download professional resumes in just a few clicks.
 
-Currently, two official plugins are available:
+This project was created as a portfolio project, inspired by [flowcv.com](https://flowcv.com).  
+It aims to provide a clean and user-friendly interface for building resumes — almost a clone of the original idea.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Purpose
 
-## Expanding the ESLint configuration
+Many developers and professionals struggle with finding a fast, flexible, and visually appealing way to build resumes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project solves that problem by:
+
+- Offering pre-designed templates that are ready to use
+- Letting users edit their resume in real-time with a live preview
+- Allowing users to export or print their resume directly from the browser
+
+## 🚀 Features
+
+- 🖋️ Easy-to-use form for editing personal details
+- 🎨 Multiple pre-designed resume templates
+- 👀 Live preview while editing
+- 📄 Download your resume as PDF
+- 💻 Responsive design for all screen sizes
+- ⚡ Fast performance using React and Vite
+
+## 🛠️ Technologies Used
+
+- React — for building the user interface
+- Vite — fast build tool and development server
+- SCSS — for styling components
+- @react-pdf/renderer — to generate PDF resumes
+- JavaScript (ES6+) — modern JavaScript features
+
+## 🌐 Live Demo
+
+Try the app live here:  
+[https://tbsoysal.github.io/resume-builder](https://tbsoysal.github.io/resume-builder)
+
+## 📸 Screenshots

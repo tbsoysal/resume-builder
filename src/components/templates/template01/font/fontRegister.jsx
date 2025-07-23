@@ -1,9 +1,9 @@
 import { Font } from '@react-pdf/renderer';
-import ZillaSlabRegular from './ZillaSlab/ZillaSlab-Regular.ttf';
-import ZillaSlabLight from './ZillaSlab/ZillaSlab-Light.ttf';
-import ZillaSlabMedium from './ZillaSlab/ZillaSlab-Medium.ttf';
-import ZillaSlabSemiBold from './ZillaSlab/ZillaSlab-SemiBold.ttf';
-import ZillaSlabBold from './ZillaSlab/ZillaSlab-Bold.ttf';
+import ZillaSlabRegular from './ZillaSlab/ZillaSlab-Regular.woff2';
+import ZillaSlabLight from './ZillaSlab/ZillaSlab-Light.woff2';
+import ZillaSlabMedium from './ZillaSlab/ZillaSlab-Medium.woff2';
+import ZillaSlabSemiBold from './ZillaSlab/ZillaSlab-SemiBold.woff2';
+import ZillaSlabBold from './ZillaSlab/ZillaSlab-Bold.woff2';
 
 export const registerFont = () => {
   Font.register({
