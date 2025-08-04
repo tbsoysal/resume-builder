@@ -1,4 +1,3 @@
-import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import styles from './Templates.module.scss';
 import Autoplay from "embla-carousel-autoplay";
@@ -18,7 +17,7 @@ export function TemplatesCarousel() {
           "cjy7ca_q8xpaocheef8v1",
           "_xarkap79m3qjwh4w8ztg"
         ].map((url, index) => (
-          <div className={styles.embla__slide}>
+          <div key={index} className={styles.embla__slide}>
             <Link to='/create'>
               <img
                 src={`https://prod.flowcvassets.com/resume-templates/${url}/960.jpeg`}
